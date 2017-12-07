@@ -1,0 +1,39 @@
+﻿
+Utworzyć aplikację udostępniającą usługę REST, która zwróci w odpowiedzi (plain text) na request GET w poniższej postaci prostokąt o zadanej wysokości (rozmiar_Y) i szerokości (rozmiar_X) wraz z zaznaczonym środkiem.
+ 
+Usługa: GET /service/rectangle?x=rozmiar_X&y=rozmiar_Y
+ 
+Prostokąt powinien się składać ze:
+ - znaków '+' w rogach
+ - znaków '|' na pionowych bokach
+ - znaków '-' na poziomych bokach
+ - znaku(ów) 'x' w środku
+ 
+Środek może się składać z jednego znaku 'x' bądź 2 lub 4 w przypadku gdy nie może zostać poprawnie zaznaczony pojedynczym znakiem. 
+ 
+Przykład:
+
+GET /service/rectangle?x=8&y=6
+wynik:
++------+
+|      |
+|  xx  |
+|  xx  |
+|      |
++------+
+
+GET /service/rectangle?x=7&y=6
++-----+
+|     |
+|  x  |
+|  x  |
+|     |
++-----+
+
+GET /service/rectangle?x=8&y=5
++------+
+|      |
+|  xx  |
+|      |
++------+
+
